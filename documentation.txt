@@ -1,0 +1,42 @@
+// Start Project
+-- yarn install
+-- yarn start
+
+
+// Create User
+curl -X POST \
+  http://localhost:8000/users \
+  -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUwMWU4Y2EyLWRhNWQtNDA5ZS1hYWZhLTM3YTc5NzU4NWFhMSIsImlhdCI6MTYwNzI5NTk3OH0.bPojD6CHe0uq_21TpwAZLnOs3gQE_ohxa1Yxib3ROiA' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 66047657-0b2d-0c0b-6b68-16b3c2d540ea' \
+  -d '{
+	"username": "Romulo Queiroz",
+	"email": "romuloqueiroz100@gmail.com",
+	"password" : "12345678"
+}'
+
+// Get Token
+curl -X POST \
+  http://localhost:8000/users/auth \
+  -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUwMWU4Y2EyLWRhNWQtNDA5ZS1hYWZhLTM3YTc5NzU4NWFhMSIsImlhdCI6MTYwNzI5NTk3OH0.bPojD6CHe0uq_21TpwAZLnOs3gQE_ohxa1Yxib3ROiA' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 66047657-0b2d-0c0b-6b68-16b3c2d540ea' \
+  -d '{
+	"email": "romuloqueiroz100@gmail.com",
+	"password" : "12345678"
+}'
+
+// GET PROFILE
+
+curl -X GET \
+  http://localhost:8000/users/my-profile \
+  -H 'authorization: XXXXXXXXXXXXX-TOKEN-XXXXXXXXXXXXX' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 3f59162b-64ce-fc77-995e-463c52b656ee'
+
+
+
+
